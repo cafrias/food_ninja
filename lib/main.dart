@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_ninja/screens/login_in_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,10 +13,15 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      theme: ThemeData(
-        useMaterial3: true,
+      theme: ThemeData.light().copyWith(
+        scaffoldBackgroundColor: Colors.white,
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: const Color.fromRGBO(21, 190, 119, 1),
+        ),
       ),
-      home: const Placeholder(),
+      home: const Scaffold(
+        body: LogInScreen(),
+      ),
     );
   }
 }
