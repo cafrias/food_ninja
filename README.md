@@ -1,16 +1,25 @@
-# food_ninja
+# Food Ninja
 
-A new Flutter project.
+This is an implementation of the [PixelTrue Food Delivery UI Kit](https://www.pixeltrue.com/free-ui-kits/food-delivery-ui-kit).
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+You need to have Flutter installed, [instructions](https://docs.flutter.dev/get-started/install).
 
-A few resources to get you started if this is your first Flutter project:
+Ensure you have all dependencies installed.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+```
+flutter pub get
+```
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Install all git hooks.
+
+```
+dart run husky install
+```
+
+Ensure you've selected an Android or iOS device where to run the application. Run the app to get started
+
+```
+flutter run
+```
