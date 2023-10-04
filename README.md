@@ -1,3 +1,5 @@
+[![codecov](https://codecov.io/gh/cafrias/food_ninja/graph/badge.svg?token=W1RGC5XX3L)](https://codecov.io/gh/cafrias/food_ninja)
+
 # Food Ninja
 
 This is an implementation of the [PixelTrue Food Delivery UI Kit](https://www.pixeltrue.com/free-ui-kits/food-delivery-ui-kit).
