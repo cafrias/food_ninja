@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:food_ninja/styles/tokens.dart';
-import 'package:food_ninja/utils/gradient_text.dart';
+import 'package:food_ninja/widgets/buttons/link_button.dart';
 import 'package:food_ninja/widgets/food_text_field.dart';
 import 'package:food_ninja/widgets/main_action_button.dart';
 import 'package:food_ninja/widgets/social_button.dart';
@@ -82,17 +81,9 @@ class _LogInFormState extends State<LogInForm> {
                 ),
               ],
             ),
-            TextButton(
-              style: TextButton.styleFrom(
-                textStyle: const TextStyle(
-                  decoration: TextDecoration.underline,
-                ),
-              ),
+            LinkButton(
+              text: 'Forgot Your Password?',
               onPressed: widget.onPasswordReset,
-              child: const GradientText(
-                'Forgot Your Password?',
-                gradient: accentGradient,
-              ),
             ),
             const SizedBox(
               height: 20,
