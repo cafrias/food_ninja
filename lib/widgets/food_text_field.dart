@@ -6,6 +6,7 @@ class FoodTextField extends StatelessWidget {
   final bool obscureText;
   final TextInputAction textInputAction;
   final void Function(String)? onFieldSubmitted;
+  final Widget? prefixIcon;
 
   const FoodTextField({
     super.key,
@@ -13,6 +14,7 @@ class FoodTextField extends StatelessWidget {
     this.textInputAction = TextInputAction.none,
     this.obscureText = false,
     this.onFieldSubmitted,
+    this.prefixIcon,
   });
 
   @override
@@ -28,6 +30,8 @@ class FoodTextField extends StatelessWidget {
         decoration: InputDecoration(
           filled: true,
           fillColor: Colors.white,
+          prefixIcon: _getPrefixIcon(),
+          isDense: true,
           enabledBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(15),
             borderSide: const BorderSide(
@@ -42,6 +46,17 @@ class FoodTextField extends StatelessWidget {
         ),
         obscureText: obscureText,
       ),
+    );
+  }
+
+  _getPrefixIcon() {
+    if (prefixIcon == null) {
+      return null;
+    }
+
+    return Padding(
+      padding: const EdgeInsetsDirectional.only(start: 20, end: 16),
+      child: prefixIcon,
     );
   }
 }

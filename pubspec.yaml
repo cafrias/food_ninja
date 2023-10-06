@@ -66,6 +66,8 @@ flutter:
     - assets/images/logo.png
     - assets/images/facebook_logo.svg
     - assets/images/google_logo.svg
+    - assets/images/email_icon.svg
+    - assets/images/lock_icon.svg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

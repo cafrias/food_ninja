@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:food_ninja/styles/tokens.dart';
 import 'package:food_ninja/utils/gradient_text.dart';
 import 'package:food_ninja/widgets/food_text_field.dart';
+import 'package:food_ninja/widgets/icons/email_icon.dart';
+import 'package:food_ninja/widgets/icons/lock_icon.dart';
 import 'package:food_ninja/widgets/main_action_button.dart';
 
 class SignUpForm extends StatefulWidget {
@@ -25,6 +27,7 @@ class _SignUpFormState extends State<SignUpForm> {
             const FoodTextField(
               labelText: 'Email',
               textInputAction: TextInputAction.next,
+              prefixIcon: EmailIcon(),
             ),
             const SizedBox(
               height: 12,
@@ -33,6 +36,7 @@ class _SignUpFormState extends State<SignUpForm> {
               labelText: 'Password',
               obscureText: true,
               textInputAction: TextInputAction.done,
+              prefixIcon: const LockIcon(),
               onFieldSubmitted: (_) {
                 () {};
               },
@@ -44,6 +48,7 @@ class _SignUpFormState extends State<SignUpForm> {
               labelText: 'Confirm Password',
               obscureText: true,
               textInputAction: TextInputAction.done,
+              prefixIcon: const LockIcon(),
               onFieldSubmitted: (_) {
                 () {};
               },
