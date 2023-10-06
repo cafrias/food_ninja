@@ -15,10 +15,17 @@ class SignUpScreen extends StatelessWidget {
       );
     }
 
-    return const AuthLayout(
+    return AuthLayout(
       title: 'Sign Up For Free',
       child: SafeArea(
-        child: SignUpForm(),
+        child: SignUpForm(
+          onLogin: () {
+            snack('Move to login');
+          },
+          onSubmit: (email, password, remember) {
+            snack("$email, $password, $remember");
+          },
+        ),
       ),
     );
   }

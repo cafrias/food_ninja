@@ -7,8 +7,17 @@ import 'package:food_ninja/widgets/icons/lock_icon.dart';
 import 'package:food_ninja/widgets/main_action_button.dart';
 
 class SignUpForm extends StatefulWidget {
+  final void Function(
+    String email,
+    String password,
+    bool remember,
+  ) onSubmit;
+  final VoidCallback onLogin;
+
   const SignUpForm({
     super.key,
+    required this.onSubmit,
+    required this.onLogin,
   });
 
   @override
@@ -32,14 +41,11 @@ class _SignUpFormState extends State<SignUpForm> {
             const SizedBox(
               height: 12,
             ),
-            FoodTextField(
+            const FoodTextField(
               labelText: 'Password',
               obscureText: true,
-              textInputAction: TextInputAction.done,
-              prefixIcon: const LockIcon(),
-              onFieldSubmitted: (_) {
-                () {};
-              },
+              textInputAction: TextInputAction.next,
+              prefixIcon: LockIcon(),
             ),
             const SizedBox(
               height: 12,
@@ -50,7 +56,11 @@ class _SignUpFormState extends State<SignUpForm> {
               textInputAction: TextInputAction.done,
               prefixIcon: const LockIcon(),
               onFieldSubmitted: (_) {
-                () {};
+                widget.onSubmit(
+                  'dummy@example.com',
+                  '123456',
+                  false,
+                );
               },
             ),
             const SizedBox(
@@ -71,11 +81,13 @@ class _SignUpFormState extends State<SignUpForm> {
             ),
             MainActionButton(
               label: 'Create Account',
-              onPressed: () {},
+              onPressed: () {
+                widget.onSubmit('dummy@example.com', '123456', false);
+              },
             ),
             LinkButton(
               text: 'already have an account?',
-              onPressed: () {},
+              onPressed: widget.onLogin,
             ),
           ],
         ));
