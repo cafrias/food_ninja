@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:food_ninja/styles/tokens.dart';
 import 'package:food_ninja/utils/gradient_text.dart';
+import 'package:food_ninja/widgets/food_checkbox.dart';
 import 'package:food_ninja/widgets/food_text_field.dart';
 import 'package:food_ninja/widgets/icons/email_icon.dart';
 import 'package:food_ninja/widgets/icons/lock_icon.dart';
@@ -54,11 +55,20 @@ class _SignUpFormState extends State<SignUpForm> {
               },
             ),
             const SizedBox(
-              height: 24,
+              height: 12,
             ),
-            Checkbox(label: 'Keep me Signed In', onChange: () {}),
+            Padding(
+              padding: const EdgeInsetsDirectional.only(start: 8.0),
+              child: FoodCheckbox(
+                label: 'Keep me Signed In',
+                onChanged: (val) {
+                  print('Changed to: $val');
+                },
+                value: true,
+              ),
+            ),
             const SizedBox(
-              height: 36,
+              height: 24,
             ),
             MainActionButton(
               label: 'Create Account',
@@ -97,23 +107,5 @@ class LinkButton extends StatelessWidget {
         gradient: accentGradient,
       ),
     );
-  }
-}
-
-class Checkbox extends StatelessWidget {
-  final bool selected;
-  final VoidCallback onChange;
-  final String label;
-
-  const Checkbox({
-    super.key,
-    required this.label,
-    required this.onChange,
-    this.selected = false,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Text(label);
   }
 }
