@@ -28,7 +28,7 @@ class MainActionButton extends StatelessWidget {
             style: TextButton.styleFrom(
               minimumSize: const Size(140, 1),
               foregroundColor: Colors.white,
-              padding: const EdgeInsets.symmetric(vertical: 18),
+              padding: const EdgeInsets.symmetric(vertical: 18, horizontal: 36),
               textStyle: const TextStyle(
                 fontSize: 16,
                 fontWeight: FontWeight.bold,
