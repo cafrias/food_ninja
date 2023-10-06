@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:food_ninja/screens/login_in_screen.dart';
+import 'package:food_ninja/screens/sign_up_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
         ),
       ),
       home: const Scaffold(
-        body: LogInScreen(),
+        body: SignUpScreen(),
       ),
     );
   }

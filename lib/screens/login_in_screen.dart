@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_ninja/widgets/layouts/auth_layout.dart';
-import 'package:food_ninja/widgets/log_in_form.dart';
+import 'package:food_ninja/widgets/forms/log_in_form.dart';
 
 class LogInScreen extends StatelessWidget {
   const LogInScreen({super.key});
