@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:food_ninja/widgets/logo.dart';
+import 'package:food_ninja/widgets/layouts/auth_layout.dart';
 import 'package:food_ninja/widgets/log_in_form.dart';
 
 class LogInScreen extends StatelessWidget {
@@ -15,47 +15,23 @@ class LogInScreen extends StatelessWidget {
       );
     }
 
-    return Container(
-      decoration: const BoxDecoration(
-        image: DecorationImage(
-          image: AssetImage('assets/images/pattern.png'),
-          fit: BoxFit.cover,
+    return AuthLayout(
+      title: 'Login To Your Account',
+      child: SafeArea(
+        child: LogInForm(
+          onEmailLogin: () {
+            snack('Logging with Email');
+          },
+          onFacebookLogin: () {
+            snack('Logging with Facebook');
+          },
+          onGoogleLogin: () {
+            snack('Logging with Google');
+          },
+          onPasswordReset: () {
+            snack('Kick off reset ...');
+          },
         ),
-      ),
-      child: ListView(
-        padding: const EdgeInsets.symmetric(horizontal: 24),
-        children: [
-          const SafeArea(child: Logo()),
-          const SizedBox(
-            height: 48,
-          ),
-          Text(
-            'Login To Your Account',
-            textAlign: TextAlign.center,
-            style: Theme.of(context).textTheme.headlineSmall!.copyWith(
-                  fontWeight: FontWeight.bold,
-                ),
-          ),
-          const SizedBox(
-            height: 16,
-          ),
-          SafeArea(
-            child: LogInForm(
-              onEmailLogin: () {
-                snack('Logging with Email');
-              },
-              onFacebookLogin: () {
-                snack('Logging with Facebook');
-              },
-              onGoogleLogin: () {
-                snack('Logging with Google');
-              },
-              onPasswordReset: () {
-                snack('Kick off reset ...');
-              },
-            ),
-          )
-        ],
       ),
     );
   }
